@@ -6,5 +6,6 @@
   "nvim-autopairs": { "branch": "master", "commit": "c2a0dd0d931d0fb07665e1fedb1ea688da3b80b4" },
   "nvim-tree.lua": { "branch": "master", "commit": "321bc61580fd066b76861c32de3319c3a6d089e7" },
   "nvim-web-devicons": { "branch": "master", "commit": "6788013bb9cb784e606ada44206b0e755e4323d7" },
-  "tokyonight.nvim": { "branch": "main", "commit": "5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd" }
+  "tokyonight.nvim": { "branch": "main", "commit": "5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd" },
+  "windsurf.vim": { "branch": "main", "commit": "a8d47ec54fe82df920b2545559f767003e8a7f8d" }
 }
