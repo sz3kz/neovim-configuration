@@ -1,4 +1,5 @@
 require("config.lazy")
 
--- Configure Theme: Tokyonight
-vim.cmd([[colorscheme tokyonight-night]])
+-- Configure Theme: gruvbox-material
+vim.g.gruvbox_material_enable_italic = true
+vim.cmd.colorscheme('gruvbox-material')
