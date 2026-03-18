@@ -1,7 +1,8 @@
-return {
-  "monkoose/neocodeium",
-  event = "VeryLazy",
-  config = function()
+-- Neocodeium AI Autocomplete
+
+
+-- Configurations
+local function configurations()
     local neocodeium = require("neocodeium")
     neocodeium.setup({
       manual = true
@@ -21,6 +22,13 @@ return {
     vim.keymap.set("i", "<A-c>", function()
       require("neocodeium").clear()
     end)
-  end
+end
+
+
+-- Plugin Installation Boilerplate
+return {
+  "monkoose/neocodeium",
+  event = "VeryLazy",
+  config = configurations
 }
 
