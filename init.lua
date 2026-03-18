@@ -1,14 +1,11 @@
-require("config.lazy")
-require("windows")
 
--- Configure Theme: gruvbox-material
-vim.g.gruvbox_material_enable_italic = true
-vim.cmd.colorscheme('gruvbox-material')
-
--- tabulation to 2 spaces
-vim.opt.tabstop = 2 
-vim.opt.softtabstop = 2 
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+-- "require" statemets are like Python's "import"s
+-- Format:
+-- * implicitly looks into the "lua/" directory
+-- * substitute "/" with "."
+-- * omit ".lua" ending
+require("config.lazy")	-- import Lazy package manager
+require("windows")	-- import lua/windows.lua (vim line numbering)
+require("tabulation")
 
 -- Add key shortcut to add .cpp source file to compilation
