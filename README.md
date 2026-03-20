@@ -10,6 +10,14 @@ The format is as follows:
 * uses **.** instead of **/** in path names (Java?)
 * needs _.lua_ ending omitted
 
+### `lua/`
+`lua/` is the configuration's root directory.
+
+### `lua/plugins`
+`lua/plugins` is the directory where plugin installation and configuration files should be stored.
+
+### `lua/*.lua`
+`lua/*.lua` files are files that natively configure neovim.
 
 ### `lua/config/lazy.lua`
 `lua/config/lazy.lua` is the config for Lazy package manager itself. The only situation where you would want to edit this file is probably when you would like to change the name of the plugin directory.
