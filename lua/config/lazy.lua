@@ -24,6 +24,7 @@ vim.g.maplocalleader = "\\"
 -- Lazy Window Configurations (Plugin Directory Name Declaration!)
 require("lazy").setup({
   spec = {
+    {"neovim/nvim-lspconfig"},
     { import = "plugins" },	-- Plugin Directory: "/lua/plugins"
   },
   install = { colorscheme = { "habamax" } },
