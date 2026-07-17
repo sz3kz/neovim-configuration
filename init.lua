@@ -1,5 +1,4 @@
 require("config.lazy")
 require("windows")
-require("tabulation")
 require("miscellaneous")
 require("clangd")
