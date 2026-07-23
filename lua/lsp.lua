@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
 			end
 
-			if client:supports_method("textDocument/documentColor") then
+			if vim.lsp.document_color and client:supports_method("textDocument/documentColor") then
 				vim.lsp.document_color.enable(true, { bufnr = buf }, {
 					style = "virtual",
 				})
@@ -41,6 +41,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.lsp.enable({
   "basedpyright",
   "clangd",
+  "nixd",
+  "lua_ls",
 })
 
 -- Load Lsp on-demand, e.g: eslint is disable by default
