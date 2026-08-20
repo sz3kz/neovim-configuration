@@ -41,9 +41,9 @@ return {
     },
     {
       mode = "v",
-      "<localleader>r",
+      "<localleader>rvc",
       function() require("quarto.runner").run_range() end,
-      desc = "run visual range",
+      desc = "run all cells inside visual selection",
       silent = true,
       ft = {"quarto", "markdown"},
     },
@@ -51,7 +51,7 @@ return {
       mode = "n",
       "<localleader>RA",
       function() require("quarto.runner").run_all(true) end,
-      desc = "run all cells of all languages",
+      desc = "(DEPRECATED)run all cells of all languages", -- Currently has no valid usage
       silent = true,
       ft = {"quarto", "markdown"},
     }
