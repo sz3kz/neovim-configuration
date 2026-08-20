@@ -5,6 +5,58 @@ return {
     "jmbuhr/otter.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
+
+  keys = {
+    {
+      mode = "n",
+      "<localleader>rc",
+      function() require("quarto.runner").run_cell() end,
+      desc = "run cell",
+      silent = true,
+      ft = {"quarto", "markdown"},
+    },
+    {
+      mode = "n",
+      "<localleader>ra",
+      function() require("quarto.runner").run_above() end,
+      desc = "run cell and above",
+      silent = true,
+      ft = {"quarto", "markdown"},
+    },
+    {
+      mode = "n",
+      "<localleader>rA",
+      function() require("quarto.runner").run_all() end,
+      desc = "run all cells",
+      silent = true,
+      ft = {"quarto", "markdown"},
+    },
+    {
+      mode = "n",
+      "<localleader>rl",
+      function() require("quarto.runner").run_line() end,
+      desc = "run line",
+      silent = true,
+      ft = {"quarto", "markdown"},
+    },
+    {
+      mode = "v",
+      "<localleader>r",
+      function() require("quarto.runner").run_range() end,
+      desc = "run visual range",
+      silent = true,
+      ft = {"quarto", "markdown"},
+    },
+    {
+      mode = "n",
+      "<localleader>RA",
+      function() require("quarto.runner").run_all(true) end,
+      desc = "run all cells of all languages",
+      silent = true,
+      ft = {"quarto", "markdown"},
+    }
+  },
+
   config = function()
     local quarto = require("quarto")
     quarto.setup({
@@ -33,14 +85,5 @@ return {
         default_method = "molten",
       },
     })
-    local runner = require("quarto.runner")
-    vim.keymap.set("n", "<localleader>rc", runner.run_cell,  { desc = "run cell", silent = true })
-    vim.keymap.set("n", "<localleader>ra", runner.run_above, { desc = "run cell and above", silent = true })
-    vim.keymap.set("n", "<localleader>rA", runner.run_all,   { desc = "run all cells", silent = true })
-    vim.keymap.set("n", "<localleader>rl", runner.run_line,  { desc = "run line", silent = true })
-    vim.keymap.set("v", "<localleader>r",  runner.run_range, { desc = "run visual range", silent = true })
-    vim.keymap.set("n", "<localleader>RA", function()
-      runner.run_all(true)
-    end, { desc = "run all cells of all languages", silent = true })
   end
 }
