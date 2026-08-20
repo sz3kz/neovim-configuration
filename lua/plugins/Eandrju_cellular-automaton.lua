@@ -10,5 +10,6 @@ end
 -- Plugin Installation Boilerplate
 return {
   'eandrju/cellular-automaton.nvim',
+  lazy = false, -- lazy = true leads to uninitialized keybinds at startup
   config = configurations
 }
