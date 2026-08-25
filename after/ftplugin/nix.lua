@@ -6,3 +6,12 @@ vim.opt_local.tabstop = nix_width          -- tabulation width (visual)
 -- vim.opt_local.stofttabstop = nix_width  -- tabulation width (editional)
 vim.opt_local.shiftwidth = nix_width       -- "<<" & ">>" indentation width
 vim.opt_local.smartindent = true              -- automatic indents
+
+
+vim.lsp.config['nixd'] = {
+  cmd = { "nixd" },
+  filetypes = { "nix" },
+  root_markers = { "flake.nix", ".git" },
+}
+
+vim.lsp.enable('nixd')
