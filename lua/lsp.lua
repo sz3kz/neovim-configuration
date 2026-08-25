@@ -4,11 +4,17 @@ local function augroup(name)
 	return vim.api.nvim_create_augroup("user_" .. name, { clear = true })
 end
 
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
-vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Code Rename" })
-vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, { desc = "Hover Documentation" })
-vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover (alt)" })
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
+vim.keymap.set("n", "<leader>ls", ":checkhealth vim.lsp<CR>", { desc = "LSP: status" })
+vim.keymap.set("n", "<leader>lse", ":lsp enable<CR>", { desc = "LSP: enable" })
+vim.keymap.set("n", "<leader>lsd", ":lsp disable<CR>", { desc = "LSP: disable" })
+vim.keymap.set("n", "<leader>lss", ":lsp stop<CR>", { desc = "LSP: stop" })
+vim.keymap.set("n", "<leader>lsr", ":lsp restart<CR>", { desc = "LSP: stop" })
+
+vim.keymap.set("n", "<leader>lsba", vim.lsp.buf.code_action, { desc = "LSP: code actions" })
+vim.keymap.set("n", "<leader>lsbr", vim.lsp.buf.rename, { desc = "LSP: rename" })
+vim.keymap.set("n", "<leader>lsbh", vim.lsp.buf.hover, { desc = "LSP: hover" })
+vim.keymap.set("n", "<leader>lsbd", vim.lsp.buf.definition, { desc = "LSP: goto definition" })
+vim.keymap.set("n", "<leader>dgof", vim.diagnostic.open_float, { desc = "Diagnostics: open float" })
 
 -- I use blink.cmp for completion, but you can use native completion too
 local completion = vim.g.completion_mode or "blink" -- or 'native' for built-in completion
@@ -35,14 +41,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			end
 		end
 	end,
-})
-
--- Enable LSP servers for Neovim 0.11+
-vim.lsp.enable({
-  "basedpyright",
-  "clangd",
-  "nixd",
-  "lua_ls",
 })
 
 -- Load Lsp on-demand, e.g: eslint is disable by default
