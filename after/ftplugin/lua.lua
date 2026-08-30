@@ -10,10 +10,10 @@ vim.opt_local.smartindent = true              -- automatic indents
 vim.lsp.config['lua_ls'] = {
   cmd = { "lua-language-server" },
   filetypes = { "lua" },
-  root_markers = { 
-    { ".emmyrc.json", ".luarc.json", ".luarc.jsonc" }, 
-    { ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml" }, 
-    { ".git" } 
+  root_markers = {
+    { ".emmyrc.json", ".luarc.json", ".luarc.jsonc" },
+    { ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml" },
+    { ".git" }
   },
   settings = {
     Lua = {
@@ -23,7 +23,12 @@ vim.lsp.config['lua_ls'] = {
       hint = {
         enable = true,
         semicolon = "Disable"
-      }
+      },
+      diagnostics = {
+        globals = {
+          'vim'
+        },
+      },
     }
   },
 }

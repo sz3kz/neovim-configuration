@@ -25,14 +25,14 @@ vim.lsp.config['clangd'] = {
     "--function-arg-placeholders",
   },
   filetypes = {
-    "c", "c.doxygen", "cpp", 
-    "cpp.doxygen", "objc", "objcpp", 
+    "c", "c.doxygen", "cpp",
+    "cpp.doxygen", "objc", "objcpp",
     "cuda"
   },
-  root_markers = { 
-    ".clangd", ".clang-tidy", ".clang-format", 
-    "compile_commands.json", "compile_flags.txt", 
-    "configure.ac", ".git" 
+  root_markers = {
+    ".clangd", ".clang-tidy", ".clang-format",
+    "compile_commands.json", "compile_flags.txt",
+    "configure.ac", ".git"
   },
   init_options = {
     fallbackFlags = { "-std=c++20" }, -- Use this if no compile_commands.json is found
