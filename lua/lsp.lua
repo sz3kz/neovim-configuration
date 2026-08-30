@@ -14,7 +14,6 @@ vim.keymap.set("n", "<leader>lsba", vim.lsp.buf.code_action, { desc = "LSP: code
 vim.keymap.set("n", "<leader>lsbr", vim.lsp.buf.rename, { desc = "LSP: rename" })
 vim.keymap.set("n", "<leader>lsbh", vim.lsp.buf.hover, { desc = "LSP: hover" })
 vim.keymap.set("n", "<leader>lsbd", vim.lsp.buf.definition, { desc = "LSP: goto definition" })
-vim.keymap.set("n", "<leader>dgof", vim.diagnostic.open_float, { desc = "Diagnostics: open float" })
 
 -- I use blink.cmp for completion, but you can use native completion too
 local completion = vim.g.completion_mode or "blink" -- or 'native' for built-in completion
